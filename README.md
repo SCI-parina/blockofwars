@@ -1,2 +1,2 @@
 # blockofwars
-Silly block for twitch interaction, for SCI-C1000
+Silly block game for twitch interaction, for SCI-C1000
