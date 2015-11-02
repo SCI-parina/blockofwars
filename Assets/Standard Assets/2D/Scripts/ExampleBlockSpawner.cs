@@ -82,4 +82,39 @@ public class ExampleBlockSpawner : MonoBehaviour {
 			g.GetComponent<BlockSetCreator>().RealStart(Block3, -1f);
 		}
 	}
+
+    public void SpawnBlocks(string input)
+    {
+        MonoBehaviour.print((object)input);
+        if (input  == "1")
+        {
+            GameObject g = (GameObject)Instantiate(blockSet, Team1, Quaternion.identity);
+            g.GetComponent<BlockSetCreator>().RealStart(Block1, 1f);
+        }
+        if (input  == "2")
+        {
+            GameObject g = (GameObject)Instantiate(blockSet, Team1, Quaternion.identity);
+            g.GetComponent<BlockSetCreator>().RealStart(Block2, 1f);
+        }
+        if (input  == "3")
+        {
+            GameObject g = (GameObject)Instantiate(blockSet, Team1, Quaternion.identity);
+            g.GetComponent<BlockSetCreator>().RealStart(Block3, 1f);
+        }
+        if (input  == "4")
+        {
+            GameObject g = (GameObject)Instantiate(blockSet, Team2, Quaternion.identity);
+            g.GetComponent<BlockSetCreator>().RealStart(Block1, -1f);
+        }
+        if (input  == "5")
+        {
+            GameObject g = (GameObject)Instantiate(blockSet, Team2, Quaternion.identity);
+            g.GetComponent<BlockSetCreator>().RealStart(Block2, -1f);
+        }
+        if (input  == "6")
+        {
+            GameObject g = (GameObject)Instantiate(blockSet, Team2, Quaternion.identity);
+            g.GetComponent<BlockSetCreator>().RealStart(Block3, -1f);
+        }
+    }
 }
