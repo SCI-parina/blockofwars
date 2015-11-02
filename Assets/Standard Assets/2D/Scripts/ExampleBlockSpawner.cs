@@ -85,7 +85,6 @@ public class ExampleBlockSpawner : MonoBehaviour {
 
     public void SpawnBlocks(string input)
     {
-        MonoBehaviour.print((object)input);
         if (input  == "1")
         {
             GameObject g = (GameObject)Instantiate(blockSet, Team1, Quaternion.identity);
