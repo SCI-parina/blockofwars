@@ -8,7 +8,6 @@ using System.Threading;
 
 public class SocketCommunications : MonoBehaviour {
 
-
 // State object for reading client data asynchronously
 public class StateObject
 {
@@ -27,8 +26,7 @@ public class AsynchronousSocketListener
 {
     // Thread signal.
     public static ManualResetEvent allDone = new ManualResetEvent(false);
- 
-
+    
     public AsynchronousSocketListener()
     {
     }
@@ -120,8 +118,10 @@ public class AsynchronousSocketListener
             {
                 Loom.QueueOnMainThread(() =>
                 {
-                    ExampleBlockSpawner spawner = UnityEngine.GameObject.FindObjectOfType<ExampleBlockSpawner>();
-                    spawner.SpawnBlocks(content);
+                    int type = int.Parse(content);
+                    // TODO: Make messages team specific
+                    Team team = UnityEngine.GameObject.FindObjectOfType<Team>();
+                    team.BuyBlock(type);
                 });
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
