@@ -33,56 +33,56 @@ public class BlockShop : MonoBehaviour {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            1),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            2),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            3),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            4),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            5),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            6),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0),
+            7),
         new BlockPrice( new bool[5,5] {
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
-            0)
+            8)
         };
 	
 	}

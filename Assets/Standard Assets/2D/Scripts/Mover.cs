@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Mover : MonoBehaviour {
 
-    public float MoveSpeed = 1f;
+    public float MoveSpeed = 0f;
 	
 	// Update is called once per frame
 	void Update () {
