@@ -14,13 +14,13 @@ public class Team : MonoBehaviour {
 
     private int income;
     private Vector3 spawn_point;
-    private float direction;
+    private int direction;
 
 	// Use this for initialization
 	void Start () {
         income = starting_income;
         spawn_point = GetComponent<Transform>().position;
-        direction = -spawn_point.x / Mathf.Abs(spawn_point.x);
+        direction = (int)(-spawn_point.x / Mathf.Abs(spawn_point.x));
 	}
 	
 	// Update is called once per frame
