@@ -14,7 +14,7 @@ public class Team : MonoBehaviour {
 
     private int income;
     private Vector3 spawn_point;
-    private int direction;
+    private int direction;             
 
 	// Use this for initialization
 	void Start () {

@@ -6,24 +6,24 @@ public class BlockSetCreator : MonoBehaviour {
 	public GameObject block;
 	public GameObject[,] blocks;
 	private int LastBlocks;
-    private int team;      
+    private int team_direction;      
 
 	// Use this for initialization
 	void Start () {
 	}
 
-	public void RealStart (bool[,] blockArray, int team_modifier) {
+	public void RealStart (bool[,] blockArray, int direction) {
 		// blockArray should be 5x5
 		blocks = new GameObject[5, 5];
-        team = team_modifier;
+        team_direction = direction;
 		
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
 				if(blockArray[i, j]){
-					Vector3 newPos = transform.position + new Vector3(team_modifier*j*block.GetComponent<Renderer>().bounds.size.x,
+					Vector3 newPos = transform.position + new Vector3(direction*j*block.GetComponent<Renderer>().bounds.size.x,
                                                                       -i*block.GetComponent<Renderer>().bounds.size.y, 0);
 					GameObject b = (GameObject)Instantiate(block, newPos, Quaternion.identity);
-					b.GetComponent<Mover>().MoveSpeed = team_modifier * 1.5f;
+					b.GetComponent<Mover>().MoveSpeed = direction * 1.5f;
 					blocks[i, j] = b;
 				}
 			}
