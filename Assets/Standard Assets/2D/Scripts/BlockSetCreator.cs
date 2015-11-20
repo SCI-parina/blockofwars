@@ -18,7 +18,7 @@ public class BlockSetCreator : MonoBehaviour {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
 				if(blockArray[i, j]){
-					Vector3 newPos = transform.position + new Vector3(i*block.GetComponent<Renderer>().bounds.size.x, j*block.GetComponent<Renderer>().bounds.size.y, 0);
+					Vector3 newPos = transform.position + new Vector3(j*block.GetComponent<Renderer>().bounds.size.x, i*block.GetComponent<Renderer>().bounds.size.y, 0);
 					GameObject b = (GameObject)Instantiate(block, newPos, Quaternion.identity);
 					b.GetComponent<Mover>().MoveSpeed = moveSpeed;
 					blocks[i, j] = b;
