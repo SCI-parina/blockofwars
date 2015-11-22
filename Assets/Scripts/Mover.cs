@@ -10,8 +10,14 @@ public class Mover : MonoBehaviour {
         transform.position = new Vector3(transform.position.x +( MoveSpeed* Time.deltaTime), transform.position.y, transform.position.z);
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        Destroy(other.gameObject);
+    void OnCollisionEnter2D(Collision2D other) {
+        print(other.gameObject);
+        if (other.gameObject.GetComponent<Team>() == null) {
+            Destroy(other.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        print(other);
     }
 }
