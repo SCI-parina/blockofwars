@@ -6,14 +6,6 @@ public class Restart : MonoBehaviour {
 
     private bool active = false;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
     public IEnumerator EndAndRestart(Text end_text, float time) {
         if (!active) {
             active = true;
