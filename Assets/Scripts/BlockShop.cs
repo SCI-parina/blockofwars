@@ -87,9 +87,14 @@ public class BlockShop : MonoBehaviour {
         };
 
         colors = new Color[] {
-            new Color(255, 0, 0),
-            new Color(0, 255, 0),
-            new Color(0, 0, 255)
+            Color.blue,
+            Color.cyan, 
+            Color.gray, 
+            Color.green, 
+            Color.magenta, 
+            Color.red, 
+            Color.yellow, 
+            Color.white
         };
 	
 	}
