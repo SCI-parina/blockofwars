@@ -11,7 +11,7 @@ public class BlockSetCreator : MonoBehaviour {
 	void Start () {
 	}
 
-	public void RealStart (bool[,] blockArray, int direction, int team_id) {
+	public void RealStart (bool[,] blockArray, int direction, int team_id, Color color) {
 		// blockArray should be 5x5
 		blocks = new GameObject[5, 5];
 		
@@ -23,6 +23,7 @@ public class BlockSetCreator : MonoBehaviour {
 					GameObject b = (GameObject)Instantiate(block, newPos, Quaternion.identity);
 					b.GetComponent<Mover>().MoveSpeed = direction * 1.5f;
                     b.GetComponent<Mover>().team_id = team_id;
+                    b.GetComponent<SpriteRenderer>().color = color;
 					blocks[i, j] = b;
 				}
 			}

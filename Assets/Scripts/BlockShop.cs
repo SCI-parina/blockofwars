@@ -16,6 +16,7 @@ public struct BlockPrice {
 public class BlockShop : MonoBehaviour {
 
     public BlockPrice[] catalogue;
+    public Color[] colors;
 
 	// Use this for initialization
 	void Start () {
@@ -83,6 +84,12 @@ public class BlockShop : MonoBehaviour {
             {true, false, false, false, false}, 
             {true, false, false, false, false}}, 
             8)
+        };
+
+        colors = new Color[] {
+            new Color(255, 0, 0),
+            new Color(0, 255, 0),
+            new Color(0, 0, 255)
         };
 	
 	}

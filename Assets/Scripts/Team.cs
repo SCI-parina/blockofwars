@@ -53,7 +53,8 @@ public class Team : MonoBehaviour {
 
     void SpawnBlock(bool[,] type) {
         GameObject g = (GameObject)Instantiate(block_set, spawn_point, Quaternion.identity);
-        g.GetComponent<BlockSetCreator>().RealStart(type, direction, id);
+        int color_i = Random.Range(0, shop.colors.GetLength(0));
+        g.GetComponent<BlockSetCreator>().RealStart(type, direction, id, shop.colors[color_i]);
     }
 
     void OnTriggerEnter2D(Collider2D other) {
