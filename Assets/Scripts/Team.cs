@@ -13,6 +13,8 @@ public class Team : MonoBehaviour {
     public Text money_text;
     public TextFade purchace_text;
     public Text hp_text;
+    public Text end_text;
+    public Restart restarter;
 
     private int id;
     private int income;
@@ -62,10 +64,13 @@ public class Team : MonoBehaviour {
         if (block != null && block.team_id != id) {
             health -= 1;
             hp_text.text = health.ToString();
-            if (health < starting_health / 3) {
+            if (health <= 0) {
+                StartCoroutine(restarter.EndAndRestart(end_text, 5));
+            } else if (health < starting_health / 3) {
                 hp_text.color = new Color(255, 0, 0);
             }
             Destroy(other.gameObject);
         }
     }
+
 }
