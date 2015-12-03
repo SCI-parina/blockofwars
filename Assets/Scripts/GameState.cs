@@ -51,6 +51,8 @@ public class GameState : MonoBehaviour {
             team2.BuyBlock(9);
         } if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
+        } if (Input.GetKeyDown(KeyCode.R)) {
+            Application.LoadLevel(0);
         }
 	}
 }

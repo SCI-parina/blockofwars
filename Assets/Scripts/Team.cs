@@ -67,7 +67,7 @@ public class Team : MonoBehaviour {
             if (health <= 0) {
                 StartCoroutine(restarter.EndAndRestart(end_text, 5));
             } else if (health < starting_health / 3) {
-                hp_text.color = new Color(255, 0, 0);
+                hp_text.color = new Color(1f, 0.4f, 0.4f);
             }
             Destroy(other.gameObject);
         }
