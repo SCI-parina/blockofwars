@@ -12,7 +12,7 @@ public class BlockSetCreator : MonoBehaviour {
     void Start () {
     }
 
-    public void RealStart(bool[,] blockArray, int direction, int team_id) {
+    public void RealStart(bool[,] blockArray, int direction, int team_id, Color color) {
         // blockArray should be 5x5
         blocks = new GameObject[5, 5];
         System.Random rand = new System.Random();
@@ -36,6 +36,7 @@ public class BlockSetCreator : MonoBehaviour {
                     TextureScale.Bilinear(tex, 12, 12);
                     Sprite sprite = Sprite.Create(tex, new Rect(0, 0, 12, 12), new Vector2(0, 0));
                     b.GetComponent<SpriteRenderer>().sprite = sprite;
+                    b.GetComponent<SpriteRenderer>().color = color;
 					blocks[i, j] = b;
 				}
 			}
