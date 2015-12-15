@@ -5,7 +5,6 @@ using System.Collections;
 public struct BlockPrice {
     public bool[,] block_type;
     public float price;
-
     public BlockPrice(bool[,] type, float p){
         block_type = type;
         price = p;

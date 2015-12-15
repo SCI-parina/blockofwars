@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using System.Collections.Generic;
 
 public class BlockSetCreator : MonoBehaviour {
 
 	public GameObject block;
 	public GameObject[,] blocks;
 	private int LastBlocks;
+    // Use this for initialization
+    void Start () {
+    }
 
-	// Use this for initialization
-	void Start () {
-	}
+    public void RealStart(bool[,] blockArray, int direction, int team_id) {
+        // blockArray should be 5x5
+        blocks = new GameObject[5, 5];
+        System.Random rand = new System.Random();
 
-	public void RealStart (bool[,] blockArray, int direction, int team_id) {
-		// blockArray should be 5x5
-		blocks = new GameObject[5, 5];
-		
-		for (int i = 0; i < 5; i++) {
+        string[] FileList = Directory.GetFiles(@"C:\temp2\", "*.png");
+        byte[] bytes;
+        bytes = System.IO.File.ReadAllBytes(FileList[rand.Next(0, FileList.Length -1)]);
+
+        for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
 				if(blockArray[i, j]){
 					Vector3 newPos = transform.position + new Vector3(direction*j*block.GetComponent<Renderer>().bounds.size.x,
@@ -23,6 +29,13 @@ public class BlockSetCreator : MonoBehaviour {
 					GameObject b = (GameObject)Instantiate(block, newPos, Quaternion.identity);
 					b.GetComponent<Mover>().MoveSpeed = direction * 1.5f;
                     b.GetComponent<Mover>().team_id = team_id;
+                    Texture2D tex = new Texture2D(12, 12);
+                    ///while(!www.isDone) { }
+                    ///www.LoadImageIntoTexture(tex);
+                    tex.LoadImage(bytes);
+                    TextureScale.Bilinear(tex, 12, 12);
+                    Sprite sprite = Sprite.Create(tex, new Rect(0, 0, 12, 12), new Vector2(0, 0));
+                    b.GetComponent<SpriteRenderer>().sprite = sprite;
 					blocks[i, j] = b;
 				}
 			}
@@ -98,7 +111,7 @@ public class BlockSetCreator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int BlocksRemaining = BlockAmount();
-		if (BlocksRemaining < LastBlocks) {
+        if (BlocksRemaining < LastBlocks) {
 			LastBlocks = BlocksRemaining;
 			if(IsDestroyed()){
 				//Kill all

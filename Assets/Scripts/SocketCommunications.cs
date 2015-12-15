@@ -120,8 +120,30 @@ public class AsynchronousSocketListener
                 {
                     int type = int.Parse(content);
                     // TODO: Make messages team specific
-                    Team team = UnityEngine.GameObject.FindObjectOfType<Team>();
-                    team.BuyBlock(type);
+                    Team[] teams = UnityEngine.GameObject.FindObjectsOfType<Team>();
+                    Debug.Log(teams.Length);
+                    if (type > 9)
+                    {
+                        if (teams[0].id == 2)
+                        {
+                            teams[0].BuyBlock(type - 9);
+                        }
+                        else if (teams[1].id == 2)
+                        {
+                            teams[1].BuyBlock(type-9);
+                        }
+                    }
+                    else
+                    {
+                        if (teams[0].id == 1)
+                        {
+                            teams[0].BuyBlock(type);
+                        }
+                        else if(teams[1].id == 1)
+                        {
+                            teams[1].BuyBlock(type);
+                        }
+                    }
                 });
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();

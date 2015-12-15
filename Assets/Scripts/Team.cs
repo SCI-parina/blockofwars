@@ -6,15 +6,15 @@ using System.Globalization;
 public class Team : MonoBehaviour {
 
     public static int starting_income = 10;
-    public static int starting_health = 20;
+    public static int starting_health = 99999;
     public float money = 0;
     public BlockShop shop;
     public GameObject block_set;
     public Text money_text;
     public TextFade purchace_text;
     public Text hp_text;
+    public int id;
 
-    private int id;
     private int income;
     private int health;
     private Vector3 spawn_point;
@@ -22,7 +22,6 @@ public class Team : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        id = GetInstanceID();
         income = starting_income;
         health = starting_health;
         spawn_point = GetComponent<Transform>().position;
